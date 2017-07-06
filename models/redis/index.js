@@ -24,9 +24,15 @@ function publishObject(channel, message) {
   return publisher.publish(channel, JSON.stringify(message))
 }
 
+async function destroy() {
+  subscriber.disconnect()
+  publisher.disconnect()
+}
+
 module.exports = Object.assign(subscriber, {
   subscriber,
   publisher,
   publishObject,
+  destroy,
   CHANNELS
 })

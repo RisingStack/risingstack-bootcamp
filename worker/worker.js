@@ -31,9 +31,27 @@ async function init() {
     }
 
     switch (channel) {
-      // TODO
+      case CHANNELS.collect.trigger.v1:
+        handlers.trigger(messageObject)
+          .catch(logError)
+        break
+      case CHANNELS.collect.repository.v1:
+        handlers.repository(messageObject)
+          .catch(logError)
+        break
+      case CHANNELS.collect.contributions.v1:
+        handlers.contributions(messageObject)
+          .catch(logError)
+        break
       default:
         logger.warn(`Redis message is not handled on channel '${channel}'`, message)
+    }
+
+    function logError(err) {
+      logger.debug('Message handling error', {
+        message,
+        error: err.message
+      })
     }
   })
 
@@ -41,8 +59,7 @@ async function init() {
 }
 
 async function halt() {
-  subscriber.disconnect()
-  publisher.disconnect()
+  await redis.destroy()
 
   logger.info('Channels are canceled')
 }
