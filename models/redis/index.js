@@ -29,10 +29,29 @@ async function destroy() {
   publisher.disconnect()
 }
 
+async function healthCheck() {
+  try {
+    await Promise.all([
+      // check first if not connected yet (lazy connect)
+      subscriber.status === 'wait' ? Promise.resolve() : subscriber.ping(),
+      publisher.status === 'wait' ? Promise.resolve() : publisher.ping()
+    ])
+  } catch (err) {
+    const error = new Error('One or more client status are not healthy')
+    error.status = {
+      subscriber: subscriber.status,
+      publisher: publisher.status
+    }
+
+    throw error
+  }
+}
+
 module.exports = Object.assign(subscriber, {
   subscriber,
   publisher,
   publishObject,
   destroy,
+  healthCheck,
   CHANNELS
 })

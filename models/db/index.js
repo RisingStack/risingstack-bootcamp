@@ -5,4 +5,10 @@ const knex = require('knex')
 
 const db = knex(config)
 
-module.exports = db
+function healthCheck() {
+  return db.select(1).timeout(config.healthCheck.timeout)
+}
+
+module.exports = Object.assign(db, {
+  healthCheck
+})
