@@ -313,11 +313,10 @@
   In this step you will add some features, which are required to have your application running in production environment.
 
   Tasks:
-  - [ ] Add a `destroy` function to the redis model, which calls `disconnect` on both redis clients and returns a `Promise`
   - [ ] Listen on the `SIGTERM` signal in `web/index.js`.
     - Create a function called `gracefulShutdown`
     - Use koa's `.callback()` function to create a `http` server (look for `http.createServer`) and convert `server.close` with `util.promisify`
-    - Close the server and destroy the database and redis connections
+    - Close the server and destroy the database and redis connections (use the `destroy` function to the redis model, which calls `disconnect` on both redis clients and returns a `Promise`)
     - Log out and exit the process with code `1` if something fails
     - Exit the process with code `0` if everything is closed succesfully
   - [ ] Implement the same for the worker process
