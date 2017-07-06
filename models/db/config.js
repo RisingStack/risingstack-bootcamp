@@ -1,5 +1,6 @@
 'use strict'
 
+const path = require('path')
 const joi = require('joi')
 const { parse } = require('pg-connection-string')
 
@@ -34,6 +35,9 @@ const config = {
   pool: {
     min: envVars.PG_POOL_MIN,
     max: envVars.PG_POOL_MAX
+  },
+  migrations: {
+    directory: path.join(__dirname, './migrations')
   }
 }
 

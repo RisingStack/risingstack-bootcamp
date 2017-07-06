@@ -8,4 +8,16 @@ if (args.includes('--local') || args.includes('-L')) {
   process.env.PG_URI = `postgres://${user}:${pw}@localhost:5432/${db}`
 }
 
-// TODO
+const knex = require('../models/db')
+
+knex.migrate.latest()
+  .then(() => {
+    // eslint-disable-next-line no-console
+    console.log('Database synced successfully!')
+    process.exit(0)
+  })
+  .catch((err) => {
+    // eslint-disable-next-line no-console
+    console.error(err)
+    process.exit(1)
+  })

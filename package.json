@@ -10,7 +10,8 @@
     "test-models": "NODE_ENV=test mocha 'models/test.setup.js' 'models/**/*.spec.js'",
     "test-only": "npm run test-web && npm run test-models",
     "lint": "eslint .",
-    "test": "npm run lint && npm run test-only"
+    "test": "npm run lint && npm run test-only",
+    "migrate-db": "node ./scripts/migrate-db"
   },
   "repository": "git+https://github.com/RisingStack/risingstack-bootcamp-reference.git",
   "author": "Andras Toth <andras.toth@risingstack.com>",
