@@ -307,6 +307,7 @@
   - [Pragmatic RESTful API](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
   - [Koa middleware & cascade](http://koajs.com/)
   - [API Blueprint tutorial](https://help.apiary.io/api_101/api_blueprint_tutorial/)
+  - [Building a RESTful API With Koa and Postgres](http://mherman.org/blog/2017/08/23/building-a-restful-api-with-koa-and-postgres)
 
 ### 7. Prepare your service for production
 
