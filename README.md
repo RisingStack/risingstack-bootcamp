@@ -269,7 +269,7 @@
 
   Readings:
   - [12 factor - Processes](https://12factor.net/processes)
-  - [12 factor - Concurrency](https://12factor.net/processes)
+  - [12 factor - Concurrency](https://12factor.net/concurrency)
   - [Redis pub/sub](https://redis.io/topics/pubsub)
   - [`ioredis`](https://github.com/luin/ioredis)
 
