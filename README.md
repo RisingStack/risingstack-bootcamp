@@ -30,7 +30,7 @@
   - Leverage [`lodash`](https://lodash.com/docs) and [`lodash/fp`](https://github.com/lodash/lodash/wiki/FP-Guide) functions
   - Avoid callbacks, use [`util.promisify`](https://nodejs.org/api/util.html#util_util_promisify_original) to convert them
   - Read the [You don't know JS](https://github.com/getify/You-Dont-Know-JS) books
-  - Use the [latest and greates ES features](http://node.green/)
+  - Use the [latest and greatest ES features](http://node.green/)
   - Follow the [clean coding](https://blog.risingstack.com/javascript-clean-coding-best-practices-node-js-at-scale/) guidelines
   - Enjoy! :)
 
