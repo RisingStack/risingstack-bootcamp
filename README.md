@@ -59,7 +59,7 @@
   ```
 
   You should also install a visual tool for PostgreSQL, pick one:
-  - [pgweb](https://github.com/sosedoff/pgweb) (`$ brew install pgweb`)
+  - [pgweb](https://github.com/sosedoff/pgweb) (`$ brew cask install pgweb`)
   - [postico](https://eggerapps.at/postico/)
 
 ### Install Redis on your system
